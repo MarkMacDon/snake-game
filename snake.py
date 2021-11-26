@@ -6,17 +6,24 @@ import numpy as np
 class Snake:
     def __init__(self):
         self.res = 20
-        self.position = Vector(0,0)
+        self.head = Vector(0,0)
         self.velocity = Vector(0,0)
         self.size = Vector(self.res,self.res)
         self.length = 0
-        self.body = np.array()
+        self.body = np.array([Vector(0,0), Vector(0,0), Vector(0,0)])
+
     
     def grow(self):
         self.length += 1
+        np.append(self.body, Vector(0,0))
         
     def move(self):
-        self.position += self.velocity
+        self.body[2]= self.body[1]
+        self.body[1]= self.body[0]
+        self.head += self.velocity
+        self.body[0]= self.head
+
+        print(self.body)
 
     def direction(self, direction):
         if direction == "UP":
