@@ -12,4 +12,5 @@ class Food:
         x = randint(0,self.res)
         y = randint(0,self.res)
         self.position = Vector(x,y)
+        print(self.position)
                

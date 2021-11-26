@@ -27,5 +27,5 @@ class SketchManager:
             self.gm.snake.direction("RIGHT")
 
         if event.key == " ":  # space
-            self.gm.snake.new_food_position()
+            self.gm.food.new_position()
 

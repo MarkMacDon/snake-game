@@ -12,8 +12,8 @@ class GameManager:
     def update(self):
         self.snake.move()
         self.check_food()
-        rect((self.snake.position), self.snake.size.x,self.snake.size.y)
-        rect((self.food.position), self.food.size.x, self.food.size.y)
+        rect((self.snake.position*self.grid.res), self.snake.size.x,self.snake.size.y)
+        rect((self.food.position*self.grid.res), self.food.size.x, self.food.size.y)
 
 
     def check_food(self):
