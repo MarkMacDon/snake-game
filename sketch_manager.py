@@ -4,28 +4,28 @@ from game_manager import GameManager
 
 class SketchManager:
     def __init__(self):
-        self.gm = GameManager()
+        self.game = GameManager()
 
     def setup(self):
         size(400,400)
 
     def draw(self):
         background(0)
-        self.gm.update()
+        self.game.update()
 
     def key_pressed(self, event):
         if event.key == "UP":
-            self.gm.snake.direction("UP")
+            self.game.snake.direction("UP")
 
         if event.key == "DOWN":
-            self.gm.snake.direction("DOWN")
+            self.game.snake.direction("DOWN")
 
         if event.key == "LEFT":
-            self.gm.snake.direction("LEFT")
+            self.game.snake.direction("LEFT")
 
         if event.key == "RIGHT":
-            self.gm.snake.direction("RIGHT")
+            self.game.snake.direction("RIGHT")
 
         if event.key == " ":  # space
-            self.gm.food.new_position()
+            self.game.snake.grow()
 

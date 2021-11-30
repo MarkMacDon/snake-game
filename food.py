@@ -5,7 +5,7 @@ from p5 import floor
 class Food:
     def __init__(self):
         self.res = 20
-        self.position = Vector(0,0)
+        self.position = Vector(4,4)
         self.size = Vector(self.res,self.res)
 
     def new_position(self):

@@ -9,21 +9,27 @@ class Snake:
         self.head = Vector(0,0)
         self.velocity = Vector(0,0)
         self.size = Vector(self.res,self.res)
-        self.length = 0
-        self.body = np.array([Vector(0,0), Vector(0,0), Vector(0,0)])
+        self.length = 3
+        self.body = np.array([[Vector(0,0)], [Vector(0,0)], [Vector(0,0)]])
 
-    
+
     def grow(self):
         self.length += 1
-        np.append(self.body, Vector(0,0))
-        
-    def move(self):
-        self.body[2]= self.body[1]
-        self.body[1]= self.body[0]
-        self.head += self.velocity
-        self.body[0]= self.head
+        # print(f"Body at grow state:{self.body}")
+        # print(f"Body shape at grow state:{self.body.shape, type(self.body)}")
+        self.body = np.append(self.body, Vector(0,0))
+        self.body = np.reshape(self.body, (self.length,1, 3))
+        print(f"body after grow state {self.body}")
 
-        print(self.body)
+        print(f"Body shape after grow state:{self.body.shape, type(self.body)}")
+
+
+    def move(self):
+        for i in reversed(range(len(self.body))):
+            self.body[i] = self.body[i-1]
+        self.body[0] = self.head
+        # print(self.head, self.body[0])
+        self.head += self.velocity
 
     def direction(self, direction):
         if direction == "UP":
