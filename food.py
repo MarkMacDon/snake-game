@@ -1,6 +1,5 @@
 from random import randint
 from p5.pmath.vector import Vector
-from p5 import floor
 
 class Food:
     def __init__(self):

@@ -1,4 +1,4 @@
-from p5 import size, background, rect
+from p5 import size, background
 from game_manager import GameManager
 
 

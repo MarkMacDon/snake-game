@@ -1,6 +1,4 @@
-from random import randint
 from p5.pmath.vector import Vector
-from p5 import floor
 import numpy as np
 
 class Snake:
@@ -15,20 +13,15 @@ class Snake:
 
     def grow(self):
         self.length += 1
-        # print(f"Body at grow state:{self.body}")
-        # print(f"Body shape at grow state:{self.body.shape, type(self.body)}")
         self.body = np.append(self.body, Vector(0,0))
         self.body = np.reshape(self.body, (self.length,1, 3))
-        print(f"body after grow state {self.body}")
-
-        print(f"Body shape after grow state:{self.body.shape, type(self.body)}")
+        print(self.body)
 
 
     def move(self):
         for i in reversed(range(len(self.body))):
             self.body[i] = self.body[i-1]
         self.body[0] = self.head
-        # print(self.head, self.body[0])
         self.head += self.velocity
 
     def direction(self, direction):
