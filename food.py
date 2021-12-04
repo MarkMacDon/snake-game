@@ -1,5 +1,5 @@
 from random import randint
-from p5.pmath.vector import Vector
+from p5_code.vector import Vector
 
 class Food:
     def __init__(self):

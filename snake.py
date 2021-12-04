@@ -1,4 +1,4 @@
-from p5.pmath.vector import Vector
+from p5_code.vector import Vector
 import numpy as np
 
 class Snake:
@@ -23,6 +23,7 @@ class Snake:
             self.body[i] = self.body[i-1]
         self.body[0] = self.head
         self.head += self.velocity
+       
 
     def direction(self, direction):
         if direction == "UP":

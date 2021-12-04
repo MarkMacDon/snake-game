@@ -2,6 +2,7 @@ from p5 import rect
 from snake import Snake
 from grid import Grid
 from food import Food
+import os
 
 
 class GameManager:
@@ -25,3 +26,9 @@ class GameManager:
             print("Got food!")
         else:
             pass
+    def output_coordinates(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(self.snake.body)
+        print(self.food.position)
+
+

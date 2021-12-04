@@ -1,4 +1,7 @@
-from p5 import *
+# This talks to Processing p5.py and includes 
+# the setup, draw and run() functions needed to run p5 sketches
+
+from p5 import run
 from sketch_manager import SketchManager
 
 sketch = SketchManager()
