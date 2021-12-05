@@ -2,6 +2,7 @@ import requests
 import time
 import json
 
+
 class HttpInput:
     def __init__(self, framerate=0.001):
 
@@ -10,7 +11,6 @@ class HttpInput:
         self.framerate = framerate
         self.parsed_input = ""
         self.unparsed_input = ""
-    
 
     def get_input(self):
         while True:
@@ -25,7 +25,6 @@ class HttpInput:
             time.sleep(self.framerate)
             return self.parsed_input
 
-    
     def parse_input(self):
         if "Up" in self.unparsed_input:
             self.parsed_input = "Up"
@@ -34,6 +33,4 @@ class HttpInput:
         if "Left" in self.unparsed_input:
             self.parsed_input = "Left"
         if "Right" in self.unparsed_input:
-            self.parsed_input = "Right"        
-
-        
+            self.parsed_input = "Right"

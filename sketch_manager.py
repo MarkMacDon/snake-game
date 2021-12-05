@@ -10,17 +10,16 @@ class SketchManager:
         self.http_input = HttpInput()
 
     def setup(self):
-        size(400,400)
-        self.input_mode = input("input_mode - Enter 0 for keyboard or 1 for gesture over http")
-
-
+        size(400, 400)
+        self.input_mode = input(
+            "input_mode - Enter 0 for keyboard or 1 for gesture over http")
 
     def draw(self):
         background(0)
         self.game.update()
         if self.input_mode == "1":
             print(self.http_input.get_input())
-            
+
             self.http_control(self.http_input.get_input())
 
     def key_pressed(self, event):
@@ -38,8 +37,6 @@ class SketchManager:
 
         if event.key == " ":  # space
             self.game.snake.grow()
-    
-    
 
     def http_control(self, event):
         if event == "Up":

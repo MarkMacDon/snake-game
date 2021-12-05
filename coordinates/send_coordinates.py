@@ -4,12 +4,13 @@
 import numpy as np
 import os
 
+
 def output(body, food):
 
-# convert food from p5.Vector to np.array
-    np_food = np.array([food.x,food.y,0])
-    lights = np.append(body,food)
-    lights = np.reshape(lights, (len(body)+1,1, 3))
+    # convert food from p5.Vector to np.array
+    np_food = np.array([food.x, food.y, 0])
+    lights = np.append(body, food)
+    lights = np.reshape(lights, (len(body)+1, 1, 3))
 
     # os.system('cls' if os.name == 'nt' else 'clear')
     print(lights)
