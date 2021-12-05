@@ -3,7 +3,7 @@ from snake import Snake
 from grid import Grid
 from food import Food
 import os
-from send_coordinates import output
+from coordinates.send_coordinates import output
 
 class GameManager:
     def __init__(self):

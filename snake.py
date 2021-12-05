@@ -11,6 +11,26 @@ class Snake:
         self.length = 3
         self.body = np.array([[Vector(0, 0)], [Vector(0, 0)], [Vector(0, 0)]])
 
+    def wraparound(self):
+        if self.head.x > self.res:
+            self.head.x = 0
+        if self.head.y > self.res:
+            self.head.y = 0
+        if self.head.x < 0:
+            self.head.x = self.res
+        if self.head.y < 0:
+            self.head.y = self.res
+
+    def reflect(self):
+        if self.head.x > self.res:
+            self.velocity.x *= -1
+        if self.head.y > self.res:
+            self.velocity.y *= -1
+        if self.head.x < 0:
+            self.velocity.x *= -1
+        if self.head.y < 0:
+            self.velocity.y *= -1
+
     def grow(self):
         self.length += 1
         self.body = np.append(self.body, self.body[-1].copy())
@@ -24,17 +44,8 @@ class Snake:
         self.body[0] = self.head
         self.head += self.velocity
 
-
-        def wraparound():
-            if self.head.x > self.res:
-                self.head.x = 0
-            if self.head.y > self.res:
-                self.head.y = 0
-            if self.head.x < 0:
-                self.head.x = self.res
-            if self.head.y < 0:
-                self.head.y = self.res
-        wraparound()
+        # self.wraparound()
+        self.reflect()
 
     def direction(self, direction):
         if direction == "UP":
