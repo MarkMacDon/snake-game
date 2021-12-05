@@ -18,7 +18,8 @@ def output(body, food):
     lights = np.reshape(lights, (len(body)+1, 1, 3))
 
     # os.system('cls' if os.name == 'nt' else 'clear')
-    print(lights)
-    for light in lights:
-        light = np.append(light, 1)
+    # print(lights)
+    return(lights)
+    
+
     # print(np_food)
