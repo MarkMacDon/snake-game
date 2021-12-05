@@ -1,5 +1,6 @@
 from random import randint
-from p5_code.vector import Vector
+from p5 import Vector
+
 
 class Food:
     def __init__(self):
@@ -8,7 +9,8 @@ class Food:
         self.size = Vector(self.res,self.res)
 
     def new_position(self):
-        x = randint(0,self.res-1)
-        y = randint(0,self.res-1)
+        x = randint(0,self.res - 1)
+        y = randint(0,self.res - 1)
         self.position = Vector(x,y)
+        print(self.position)
                
