@@ -6,4 +6,5 @@ class Grid:
         self.res = 20
         self.num_cols = int(width/self.res)
         self.num_rows = int(height/self.res)
-        self.size = Vector(self.num_cols, self.num_rows)
+        self.size = Vector(self.num_cols,self.num_rows)
+    

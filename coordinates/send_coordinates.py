@@ -6,6 +6,11 @@ import os
 
 
 def output(body, food):
+    # makes a numpy array containing n elements, 
+    # first n-1 elements are body, the final element
+    # is the food. 
+    # Each element contains three numbers corresponding to x, y, z coordinates
+    # in the range from 0 to res
 
     # convert food from p5.Vector to np.array
     np_food = np.array([food.x, food.y, 0])
