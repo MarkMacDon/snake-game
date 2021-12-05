@@ -8,8 +8,7 @@ class Food:
         self.size = Vector(self.res,self.res)
 
     def new_position(self):
-        x = randint(0,self.res)
-        y = randint(0,self.res)
+        x = randint(0,self.res-1)
+        y = randint(0,self.res-1)
         self.position = Vector(x,y)
-        print(self.position)
                

@@ -3,7 +3,7 @@ from snake import Snake
 from grid import Grid
 from food import Food
 import os
-
+from send_coordinates import output
 
 class GameManager:
     def __init__(self):
@@ -18,6 +18,8 @@ class GameManager:
              self.food.size.x, self.food.size.y)
         for part in self.snake.body:
             rect((part[0]*self.grid.res), self.snake.size.x, self.snake.size.y)
+        
+        output(self.snake.body, self.food.position)
 
     def check_food(self):
         if self.snake.head == self.food.position:
@@ -26,9 +28,6 @@ class GameManager:
             print("Got food!")
         else:
             pass
-    def output_coordinates(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(self.snake.body)
-        print(self.food.position)
+
 
 

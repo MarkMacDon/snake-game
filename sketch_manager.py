@@ -12,7 +12,6 @@ class SketchManager:
     def draw(self):
         background(0)
         self.game.update()
-        self.game.output_coordinates()
 
     def key_pressed(self, event):
         if event.key == "UP":

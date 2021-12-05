@@ -13,17 +13,31 @@ class Snake:
 
     def grow(self):
         self.length += 1
-        self.body = np.append(self.body, Vector(0,0))
+        self.body = np.append(self.body, self.body[-1].copy())
         self.body = np.reshape(self.body, (self.length,1, 3))
         print(self.body)
 
 
+    
+
+       
     def move(self):
+
         for i in reversed(range(len(self.body))):
             self.body[i] = self.body[i-1]
         self.body[0] = self.head
         self.head += self.velocity
-       
+
+        def wraparound():
+            if self.head.x > self.res:
+                self.head.x = 0
+            if self.head.y > self.res:
+                self.head.y = 0
+            if self.head.x < 0:
+                self.head.x = self.res
+            if self.head.y < 0:
+                self.head.y = self.res
+        wraparound()
 
     def direction(self, direction):
         if direction == "UP":
