@@ -1,14 +1,13 @@
 import requests
 import time
 import json
+import constants as c
 
 
 class HttpInput:
-    def __init__(self, framerate=0.001):
-
-        # self.url = "http://192.168.1.72:8080/"
-        self.url = "http://localhost:8081"
-        self.framerate = framerate
+    def __init__(self):
+        self.url = f'http://{c.IP_ADDRESS}:{c.PORT}/'
+        #self.url = "http://localhost:8081"
         self.parsed_input = ""
         self.unparsed_input = ""
 
@@ -22,7 +21,6 @@ class HttpInput:
                 if line:
                     self.unparsed_input += str(line)
             self.parse_input()
-            time.sleep(self.framerate)
             return self.parsed_input
 
     def parse_input(self):
